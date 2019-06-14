@@ -1,0 +1,10 @@
+<h1>Planning: {{ planning.id }}</h1>
+
+<p>Instructor: {{ planning.instructor }}</p>
+<p>Student: {{ planning.student }}</p>
+<p>Date: {{ planning.meeting_date }}</p>
+<p>Place: {{ planning.meeting_point }}</p>
+<p>instructor validation: {{ planning.instructor_validation }}</p>
+<p>student validation: {{ planning.student_validation }}</p>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}

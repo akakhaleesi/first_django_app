@@ -1,0 +1,10 @@
+<a href="{% url 'polls:planning_form' %}">Set appointment</a>
+{% if planning_list %}
+    <ul>
+    {% for planning in planning_list %}
+        <li><a href="{% url 'polls:planning_detail' planning.id %}">{{ planning.meeting_date }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No appointments are available.</p>
+{% endif %}

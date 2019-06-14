@@ -1,0 +1,17 @@
+<a href="{% url 'polls:student_list' %}">Liste des etudiants</a><br>
+<a href="{% url 'polls:planning_list' %}">Plannings</a>
+
+<h2>Tests:</h2>
+
+
+<a href="{% url 'polls:question_form' %}">Create a question</a><br>
+<a href="{% url 'polls:choice_form' %}">Create a choice</a>
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
